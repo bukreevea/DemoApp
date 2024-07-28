@@ -39,15 +39,6 @@ class BreedsTableViewCell: UITableViewCell {
         setupLayout()
     }
     
-    /// Очищаем данные в ячейке
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        breedsImageView.image = nil
-        titleLable.text = nil
-        subTitleLable.text = nil
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -57,8 +48,10 @@ class BreedsTableViewCell: UITableViewCell {
         titleLable.text = breeds.name
         subTitleLable.text = breeds.temperament
     }
+    
     //MARK: - private
     
+    /// Настраиваем вид ячейки
     private func setupLayout(){
         let dataStackView = UIStackView(arrangedSubviews: [titleLable, subTitleLable])
         dataStackView.translatesAutoresizingMaskIntoConstraints = false
