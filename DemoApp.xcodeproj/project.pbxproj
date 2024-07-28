@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE6D58512C56A03500A14E37 /* BreedsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D58502C56A03500A14E37 /* BreedsTableViewCell.swift */; };
-		CE6D58542C56B80A00A14E37 /* CatBreeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D58532C56B80A00A14E37 /* CatBreeds.swift */; };
+		CE6D58562C56D84100A14E37 /* CatBreeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D58552C56D84100A14E37 /* CatBreeds.swift */; };
+		CE6D58592C56D8B500A14E37 /* BreedsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D58582C56D8B500A14E37 /* BreedsTableViewCell.swift */; };
 		CEAE6DA52C52699A007777F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE6DA42C52699A007777F8 /* AppDelegate.swift */; };
 		CEAE6DA72C52699A007777F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE6DA62C52699A007777F8 /* SceneDelegate.swift */; };
 		CEAE6DA92C52699A007777F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE6DA82C52699A007777F8 /* ViewController.swift */; };
@@ -38,8 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CE6D58502C56A03500A14E37 /* BreedsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		CE6D58532C56B80A00A14E37 /* CatBreeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreeds.swift; sourceTree = SOURCE_ROOT; };
+		CE6D58552C56D84100A14E37 /* CatBreeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CatBreeds.swift; path = DemoApp/Models/CatBreeds.swift; sourceTree = SOURCE_ROOT; };
+		CE6D58582C56D8B500A14E37 /* BreedsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BreedsTableViewCell.swift; path = DemoApp/Views/BreedsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		CEAE6DA12C52699A007777F8 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEAE6DA42C52699A007777F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEAE6DA62C52699A007777F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,20 +80,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE6D584F2C569FF200A14E37 /* View */ = {
+		CE6D58572C56D86A00A14E37 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CE6D58502C56A03500A14E37 /* BreedsTableViewCell.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		CE6D58522C56B7BB00A14E37 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				CE6D58532C56B80A00A14E37 /* CatBreeds.swift */,
+				CE6D58552C56D84100A14E37 /* CatBreeds.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CE6D585A2C56D8BC00A14E37 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE6D58582C56D8B500A14E37 /* BreedsTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		CEAE6D982C52699A007777F8 = {
@@ -119,8 +119,8 @@
 		CEAE6DA32C52699A007777F8 /* DemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				CE6D58522C56B7BB00A14E37 /* Models */,
-				CE6D584F2C569FF200A14E37 /* View */,
+				CE6D585A2C56D8BC00A14E37 /* Views */,
+				CE6D58572C56D86A00A14E37 /* Models */,
 				CEAE6DA42C52699A007777F8 /* AppDelegate.swift */,
 				CEAE6DA62C52699A007777F8 /* SceneDelegate.swift */,
 				CEAE6DA82C52699A007777F8 /* ViewController.swift */,
@@ -279,12 +279,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6D58592C56D8B500A14E37 /* BreedsTableViewCell.swift in Sources */,
 				CEAE6DA92C52699A007777F8 /* ViewController.swift in Sources */,
+				CE6D58562C56D84100A14E37 /* CatBreeds.swift in Sources */,
 				CEAE6DA52C52699A007777F8 /* AppDelegate.swift in Sources */,
 				CEAE6DAF2C52699A007777F8 /* DemoApp.xcdatamodeld in Sources */,
 				CEAE6DA72C52699A007777F8 /* SceneDelegate.swift in Sources */,
-				CE6D58512C56A03500A14E37 /* BreedsTableViewCell.swift in Sources */,
-				CE6D58542C56B80A00A14E37 /* CatBreeds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
