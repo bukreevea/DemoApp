@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import UIKit
+
+struct CatBreeds {
+    let name: String
+    let temperament: String
+    let image: UIImage?
+}

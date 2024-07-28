@@ -8,16 +8,83 @@
 import UIKit
 
 class BreedsTableViewCell: UITableViewCell {
+    
+    private lazy var breedsImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    private lazy var titleLable: UILabel = {
+        let titleLable = UILabel()
+        titleLable.font = .boldSystemFont(ofSize: 16)
+        titleLable.translatesAutoresizingMaskIntoConstraints = false
+        return titleLable
+    }()
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    private lazy var subTitleLable: UILabel = {
+        let subTitleLable = UILabel()
+        subTitleLable.numberOfLines = 0
+        subTitleLable.lineBreakMode = .byWordWrapping
+        subTitleLable.font = .italicSystemFont(ofSize: 14)
+        subTitleLable.translatesAutoresizingMaskIntoConstraints = false
+        return subTitleLable
+    }()
+    
+    // MARK: - init
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        setupLayout()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    /// Очищаем данные в ячейке
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        breedsImageView.image = nil
+        titleLable.text = nil
+        subTitleLable.text = nil
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configureCell(with breeds: CatBreeds) {
+        breedsImageView.image = breeds.image
+        titleLable.text = breeds.name
+        subTitleLable.text = breeds.temperament
+    }
+    //MARK: - private
+    
+    private func setupLayout(){
+        let dataStackView = UIStackView(arrangedSubviews: [titleLable, subTitleLable])
+        dataStackView.translatesAutoresizingMaskIntoConstraints = false
+        dataStackView.axis = .vertical
+        dataStackView.alignment = .fill
+        
+        contentView.addSubview(breedsImageView)
+        contentView.addSubview(dataStackView)
+        
+        NSLayoutConstraint.activate([
+            breedsImageView.heightAnchor.constraint(equalToConstant: 100),
+            breedsImageView.widthAnchor.constraint(equalToConstant: 100),
+            breedsImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            breedsImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            breedsImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            
+            dataStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            dataStackView.leadingAnchor.constraint(equalTo: breedsImageView.trailingAnchor, constant: 5),
+            dataStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            dataStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+        ])
+    }
+}
 
+extension UITableViewCell {
+    static var reuseIdentifier: String {
+        return String(describing: self)
+    }
 }
